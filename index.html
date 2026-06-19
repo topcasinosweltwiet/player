@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TopCasinos - Maintenance</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+}
+.space{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,0,200,.5), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(0,255,255,.4), transparent 25%),
+    radial-gradient(circle at 50% 70%, rgba(80,100,255,.5), transparent 30%),
+    radial-gradient(circle at 70% 80%, rgba(255,120,0,.25), transparent 25%),
+    #02030d;
+    animation: drift 25s ease-in-out infinite alternate;
+}
+.space:before,.space:after{
+    content:"";
+    position:absolute;
+    inset:-30%;
+    background:
+      radial-gradient(2px 2px at 10% 20%, white, transparent),
+      radial-gradient(2px 2px at 80% 40%, white, transparent),
+      radial-gradient(1px 1px at 50% 70%, white, transparent),
+      radial-gradient(2px 2px at 30% 90%, white, transparent),
+      radial-gradient(1px 1px at 90% 10%, white, transparent);
+    background-size:250px 250px;
+}
+.space:before{
+    animation: stars1 60s linear infinite;
+    opacity:.8;
+}
+.space:after{
+    animation: stars2 90s linear infinite reverse;
+    opacity:.5;
+    transform:scale(1.5);
+}
+.nebula{
+    position:absolute;
+    width:180vmax;
+    height:180vmax;
+    border-radius:50%;
+    background:conic-gradient(from 0deg,
+    rgba(255,0,255,.18),
+    rgba(0,255,255,.18),
+    rgba(70,70,255,.18),
+    rgba(255,140,0,.18),
+    rgba(255,0,255,.18));
+    filter:blur(80px);
+    animation: rotate 40s linear infinite;
+}
+.card{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:45px;
+    width:min(90%,700px);
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:24px;
+}
+h1{
+    font-size:clamp(42px,7vw,72px);
+    margin-bottom:15px;
+    background:linear-gradient(90deg,#ffd700,#fff,#ffd700);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+h2{margin-bottom:18px}
+p{font-size:18px;line-height:1.7;color:#ddd}
+.loader{
+    margin:30px auto 0;
+    width:70px;height:70px;
+    border-radius:50%;
+    border:6px solid rgba(255,255,255,.15);
+    border-top-color:#ffd700;
+    animation:spin 1s linear infinite;
+}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{
+    0%{transform:scale(1) rotate(0deg)}
+    100%{transform:scale(1.25) rotate(12deg)}
+}
+@keyframes stars1{
+    from{transform:translateY(0)}
+    to{transform:translateY(-1200px)}
+}
+@keyframes stars2{
+    from{transform:translateX(0)}
+    to{transform:translateX(-1200px)}
+}
+</style>
+</head>
+<body>
+<div class="space"></div>
+<div class="nebula"></div>
+
+<div class="card">
+<h1>TopCasinos</h1>
+<h2>Under Server Maintenance</h2>
+<p>
+We are currently performing maintenance and upgrades.<br>
+Our servers will be back online shortly.<br><br>
+Thank you for your patience.
+</p>
+<div class="loader"></div>
+</div>
+</body>
+</html>
